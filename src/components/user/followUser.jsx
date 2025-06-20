@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+import server from "../../../Environment.js";
+const server_url=server;
 const FollowUser = () => {
     const check=useRef(false);
   const { id, userId } = useParams();
@@ -11,7 +12,7 @@ const FollowUser = () => {
     check.current=true;
     const follow = async () => {
       try {
-        const result = await fetch(`https://github-backend-jeo7.onrender.com/user/follow/${id}/${userId}`, {
+        const result = await fetch(`${server_url}/user/follow/${id}/${userId}`, {
           method: "PATCH",
         });
 

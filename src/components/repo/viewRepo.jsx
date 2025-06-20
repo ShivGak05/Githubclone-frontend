@@ -1,6 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./repo.css"
+import server from "../../../Environment";
+const server_url=server;
 const RepositoryView = () => {
   const { id } = useParams();
   const [repository, setRepository] = useState(null);
@@ -8,7 +10,7 @@ const RepositoryView = () => {
   useEffect(() => {
     const fetchRepository = async () => {
       try {
-        const response = await fetch(`https://github-backend-jeo7.onrender.com/repo/${id}`);
+        const response = await fetch(`${server_url}/repo/${id}`);
         const data = await response.json();
         console.log(data.repository);
         setRepository(data.repository);

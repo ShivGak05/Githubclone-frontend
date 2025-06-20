@@ -4,7 +4,8 @@ import axios from "axios";
 import "./profile.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-
+import server from "../../../Environment.js";
+const server_url=server;
 import HeatMapProfile from "./HeatMap";
 import { useAuth } from "../../authContext";
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,9 +24,9 @@ const Profile = () => {
 
       try {
         const [userRes, repoRes, followingRes] = await Promise.all([
-          axios.get(`https://github-backend-jeo7.onrender.com/user/${userId}`),
-          axios.get(`https://github-backend-jeo7.onrender.com/repo/user/${userId}`),
-          axios.get(`https://github-backend-jeo7.onrender.com/user/${userId}/following`)
+          axios.get(`${server_url}/user/${userId}`),
+          axios.get(`${server_url}/repo/user/${userId}`),
+          axios.get(`${server_url}/user/${userId}/following`)
         ]);
 
         setUserDetails(userRes.data);

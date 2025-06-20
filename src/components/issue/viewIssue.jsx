@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./issue.css";
+import server from "../../../Environment.js";
+const server_url=server;
 const ViewIssue = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -10,7 +12,7 @@ const ViewIssue = () => {
   useEffect(() => {
     const findIssue = async () => {
       try {
-        const result = await fetch(`https://github-backend-jeo7.onrender.com/issue/${id}`);
+        const result = await fetch(`${server_url}/issue/${id}`);
         const data = await result.json();
         if (!data.issue) {
           alert("No issue found");

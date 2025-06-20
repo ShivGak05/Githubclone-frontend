@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import Navbar from "../Navbar";
 import LogoutButton from "../logout";
+import server from "../../../Environment.js"
+const server_url=server;
 const Dashboard = () => {
   const [repositories, setRepositories] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -16,7 +18,7 @@ const Dashboard = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `https://github-backend-jeo7.onrender.com/repo/user/${userId}`
+          `${server_url}/repo/user/${userId}`
         );
          if (!response.ok) {
       console.error("Failed to fetch user repositories:", response.statusText);
@@ -37,7 +39,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
   try {
-    const response = await fetch("https://github-backend-jeo7.onrender.com/repo/all");
+    const response = await fetch(`${server_url}/repo/all`);
     const data = await response.json();
 
     // If data is an array directly:

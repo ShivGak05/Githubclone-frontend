@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../../authContext";
-
+import server from "../../../Environment";
 import { PageHeader } from "@primer/react";
 import { Box, Button } from "@primer/react";
 import "./auth.css";
-
+const server_url=server;
 import logo from "../../assets/github-mark-white.svg";
 import { Link } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("https://github-backend-jeo7.onrender.com/signup", {
+      const res = await axios.post(`${server_url}/signup`, {
         email: email,
         password: password,
         username: username,

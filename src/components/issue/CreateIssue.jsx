@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate,useParams } from "react-router-dom";
 import "./issue.css"
+import server from "../../../Environment.js";
+const server_url=server;
 const CreateIssue=()=>{
     const {id}=useParams();
     const [title,setTitle]=useState("");
@@ -14,7 +16,7 @@ const CreateIssue=()=>{
             return;
         }
         try{
-            const result=await axios.post(`https://github-backend-jeo7.onrender.com/issue/create/${id}`,{
+            const result=await axios.post(`${server_url}/issue/create/${id}`,{
                 title,
                 description,
                 status,

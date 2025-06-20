@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreateRepo.css";
-
+import server from "../../../Environment.js";
+const server_url=server;
 const CreateRepo = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -32,7 +33,7 @@ const CreateRepo = () => {
   owner,
 });
 
-      const result = await axios.post("https://github-backend-jeo7.onrender.com/repo/create", {
+      const result = await axios.post(`${server_url}/repo/create`, {
         name,
         description,
         content,

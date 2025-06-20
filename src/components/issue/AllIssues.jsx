@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate,useParams } from "react-router-dom";
+import server from "../../../Environment.js";
+const server_url=server;
 const AllIssues=()=>{
     const {id}=useParams();
     const navigate=useNavigate();
@@ -9,7 +11,7 @@ const AllIssues=()=>{
     useEffect(()=>{
         const viewallissues=async()=>{
             try{
-                const result=await fetch(`https://github-backend-jeo7.onrender.com/issue/repo/${id}`);
+                const result=await fetch(`${server_url}/issue/repo/${id}`);
                 const data=await result.json();
                 if(!data){
                     alert("NO issues for this repo");

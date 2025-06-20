@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+import server from "../../../Environment.js";
+const server_url=server;
 const DeleteUser = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const DeleteUser = () => {
       }
 
       try {
-        const response = await fetch(`https://github-backend-jeo7.onrender.com/user/delete/${id}`, {
+        const response = await fetch(`${server_url}/user/delete/${id}`, {
           method: "DELETE",
         });
 

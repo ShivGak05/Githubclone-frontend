@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./user.css";
+import server from "../../../Environment.js";
+const server_url=server;
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
@@ -8,7 +10,7 @@ const AllUsers = () => {
   useEffect(() => {
    const fetchUsers = async () => {
   try {
-    const result = await fetch("https://github-backend-jeo7.onrender.com/user/all");
+    const result = await fetch(`${server_url}/user/all`);
     const data = await result.json();
     if (Array.isArray(data)) {
       const filteredUsers = data.filter((user) => String(user._id) !== String(currId));
@@ -31,7 +33,7 @@ const [currentUser, setCurrentUser] = useState(null);
 useEffect(() => {
   const fetchCurrentUser = async () => {
     try {
-      const res = await fetch(`https://github-backend-jeo7.onrender.com/user/${currId}`);
+      const res = await fetch(`${server_url}/user/${currId}`);
       const data = await res.json();
       setCurrentUser(data.user);
     } catch (err) {
@@ -43,7 +45,7 @@ useEffect(() => {
 
 const handleFollowToggle = async (targetUserId) => {
   try {
-    const res = await fetch(`https://github-backend-jeo7.onrender.com/user/follow/${currId}/${targetUserId}`, {
+    const res = await fetch(`${server_url}/user/follow/${currId}/${targetUserId}`, {
       method: "PATCH",
     });
     const data = await res.json();
@@ -52,7 +54,7 @@ const handleFollowToggle = async (targetUserId) => {
       alert(data.message || "Error while following/unfollowing");
       return;
     }
-    const updatedRes = await fetch(`https://github-backend-jeo7.onrender.com/user/${currId}`);
+    const updatedRes = await fetch(`${server_url}/user/${currId}`);
     const updatedData = await updatedRes.json();
     setCurrentUser(updatedData.user); 
   } catch (err) {

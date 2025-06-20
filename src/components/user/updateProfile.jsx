@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+import server from "../../../Environment.js";
+const server_url=server;
 const UpdateProfile = () => {
   const id=localStorage.getItem("userId");
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const UpdateProfile = () => {
     const fetchUser = async () => {
       try {
         //console.log(id);
-        const result = await fetch(`https://github-backend-jeo7.onrender.com/user/${id}`);
+        const result = await fetch(`${server_url}/user/${id}`);
         const data = await result.json();
         if (!result.ok) {
           alert("Error fetching user");
@@ -32,7 +33,7 @@ const UpdateProfile = () => {
 
   const handleUpdate = async () => {
     try {
-      const result = await fetch(`https://github-backend-jeo7.onrender.com/user/update/${id}`, {
+      const result = await fetch(`${server_url}/user/update/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

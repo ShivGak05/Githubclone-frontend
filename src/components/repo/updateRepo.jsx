@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./repo.css";
+import server from "../../../Environment.js";
+const server_url=server;
 const UpdateRepo = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ const UpdateRepo = () => {
  useEffect(() => {
     const fetchRepository = async () => {
       try {
-        const response = await fetch(`https://github-backend-jeo7.onrender.com/repo/${id}`);
+        const response = await fetch(`${server_url}/repo/${id}`);
         const data = await response.json();
         console.log(data.repository);
         if(!data.repository){
@@ -48,7 +50,7 @@ const handleAddContent = () => {
 
   const handleUpdate = async () => {
     try {
-      const result = await axios.put(`https://github-backend-jeo7.onrender.com/repo/update/${id}`, {
+      const result = await axios.put(`${server_url}/repo/update/${id}`, {
         description,
         content,
       });

@@ -2,6 +2,8 @@ import React,{useEffect,useState} from "react";
 import { useParams,useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./issue.css"
+import server from "../../../Environment.js";
+const server_url=server;
 const UpdateIssue=()=>{
     const [title,setTitle]=useState("");
     const [description,setDescription]=useState("");
@@ -12,7 +14,7 @@ const UpdateIssue=()=>{
     useEffect(()=>{
         const fetchissue=async()=>{
             try{
-            const result=await fetch(`https://github-backend-jeo7.onrender.com/issue/${id}`);
+            const result=await fetch(`${server_url}/issue/${id}`);
             const data=await result.json();
             if(!data.issue){
                 alert("error");
@@ -32,7 +34,7 @@ const UpdateIssue=()=>{
     
     const handleupdate=async()=>{
         try{
-           let result=await axios.put(`https://github-backend-jeo7.onrender.com/issue/update/${id}`,{
+           let result=await axios.put(`${server_url}/issue/update/${id}`,{
             title,
             description,
             status,
