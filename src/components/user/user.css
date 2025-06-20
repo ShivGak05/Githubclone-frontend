@@ -1,0 +1,13 @@
+.userheading{
+    font-size: 2rem;
+    color:blueviolet;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+.yumyum{
+    border: 0.3rem solid rgb(211, 117, 117);
+    background-color: bisque;
+}
+.cardy{
+    padding: 1.3rem;
+}

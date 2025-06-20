@@ -1,0 +1,23 @@
+.cardheat{
+    background-color: rgb(244, 234, 225)!important;
+}
+.yolo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-weight: bold;
+}
+.name{
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: blue!important;
+}
+.name2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+.listy{
+    margin-top: 0.5rem;
+    background: bisque;
+}

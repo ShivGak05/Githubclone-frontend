@@ -1,0 +1,62 @@
+/* Dashboard container */
+#dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px 40px; /* account for navbar + spacing */
+  min-height: 100vh;
+  background-color: #0d1117;
+  box-sizing: border-box;
+}
+
+/* Shared styles for each section */
+#first, #second, #third {
+  background-color: #1f2937; /* deep gray */
+  border-radius: 2rem;
+  color: #e5e7eb; /* light gray text */
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  min-height: 400px;
+  overflow-y: auto;
+}
+
+/* Optional: Space the three columns equally */
+#first, #second, #third {
+  flex-basis: 30%;
+}
+
+/* Scrollbar customization (optional) */
+#first::-webkit-scrollbar,
+#second::-webkit-scrollbar,
+#third::-webkit-scrollbar {
+  width: 6px;
+}
+#first::-webkit-scrollbar-thumb,
+#second::-webkit-scrollbar-thumb,
+#third::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+.repohead{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.repobox{
+  border: 0.01rem solid rgb(235, 222, 222);
+  border-radius: 1.1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.searchopt{
+  margin: 1rem;
+}

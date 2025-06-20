@@ -1,0 +1,36 @@
+.issue-form{
+     border: 3px solid brown;
+     width:50rem;
+     background-color: rgb(179, 238, 116);
+}
+.issue-create{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    color: blueviolet;
+    font-size: 3rem;
+}
+.inside-content{
+    padding: 3rem;
+}
+.form-label{
+    font-weight: bold;
+}
+.heading{
+    color: chocolate;
+    font-weight: bold;
+}
+.yoyo{
+    background-color: bisque!important;
+    border:0.2rem solid rgb(254, 184, 91)!important;
+    border-radius: 1.3rem!important;
+}
+.card2{
+    background-color: bisque!important;
+    border: 0.6rem solid green!important;
+}
+.myheading{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: bold!important;
+    color: blue!important;
+}
