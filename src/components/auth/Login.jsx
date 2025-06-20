@@ -8,7 +8,8 @@ import "./auth.css";
 
 import logo from "../../assets/github-mark-white.svg";
 import { Link } from "react-router-dom";
-
+import server from "../../../Environment";
+const server_url=server;
 const Login = () => {
   // useEffect(() => {
   //   localStorage.removeItem("token");
@@ -26,7 +27,7 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("https://github-backend-jeo7.onrender.com/login", {
+      const res = await axios.post(`${server_url}/login`, {
         email: email,
         password: password,
       });
