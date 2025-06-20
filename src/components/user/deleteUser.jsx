@@ -14,7 +14,7 @@ const DeleteUser = () => {
       }
 
       try {
-        const response = await fetch(`http://localhost:3000/user/delete/${id}`, {
+        const response = await fetch(`13.53.131.133:3000/user/delete/${id}`, {
           method: "DELETE",
         });
 

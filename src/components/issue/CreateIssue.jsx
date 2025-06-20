@@ -14,7 +14,7 @@ const CreateIssue=()=>{
             return;
         }
         try{
-            const result=await axios.post(`http://localhost:3000/issue/create/${id}`,{
+            const result=await axios.post(`13.53.131.133:3000/issue/create/${id}`,{
                 title,
                 description,
                 status,

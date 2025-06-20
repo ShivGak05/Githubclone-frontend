@@ -11,7 +11,7 @@ const ToggleRepo=()=>{
             const confirmme=window.confirm("Are you sure to change the visibility of this repo?");
             if(!confirmme) return;
             try{
-               const result=await fetch(`http://localhost:3000/repo/toggle/${id}`,{method:"PATCH"});
+               const result=await fetch(`13.53.131.133:3000/repo/toggle/${id}`,{method:"PATCH"});
                const data=await result.json();
                 if(data.repository){
                     alert(`repository made ${data.repository.visibility}`);

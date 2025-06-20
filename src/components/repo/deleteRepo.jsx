@@ -9,7 +9,7 @@ const DeleteRepo = () => {
   useEffect(() => {
     const deleteRepo = async () => {
       try {
-        const result = await axios.delete(`http://localhost:3000/repo/delete/${id}`);
+        const result = await axios.delete(`13.53.131.133:3000/repo/delete/${id}`);
         alert(result.data.message);
         navigate("/"); // or "/" depending on your route
       } catch (error) {

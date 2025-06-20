@@ -9,7 +9,7 @@ const AllIssues=()=>{
     useEffect(()=>{
         const viewallissues=async()=>{
             try{
-                const result=await fetch(`http://localhost:3000/issue/repo/${id}`);
+                const result=await fetch(`13.53.131.133:3000/issue/repo/${id}`);
                 const data=await result.json();
                 if(!data){
                     alert("NO issues for this repo");

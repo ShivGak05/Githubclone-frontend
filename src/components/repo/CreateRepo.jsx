@@ -32,7 +32,7 @@ const CreateRepo = () => {
   owner,
 });
 
-      const result = await axios.post("http://localhost:3000/repo/create", {
+      const result = await axios.post("13.53.131.133:3000/repo/create", {
         name,
         description,
         content,

@@ -16,7 +16,7 @@ const Dashboard = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`
+          `13.53.131.133:3000/repo/user/${userId}`
         );
          if (!response.ok) {
       console.error("Failed to fetch user repositories:", response.statusText);
@@ -37,7 +37,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
   try {
-    const response = await fetch("http://localhost:3000/repo/all");
+    const response = await fetch("13.53.131.133:3000/repo/all");
     const data = await response.json();
 
     // If data is an array directly:

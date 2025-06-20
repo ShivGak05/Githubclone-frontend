@@ -13,7 +13,7 @@ const UpdateRepo = () => {
  useEffect(() => {
     const fetchRepository = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/repo/${id}`);
+        const response = await fetch(`13.53.131.133:3000/repo/${id}`);
         const data = await response.json();
         console.log(data.repository);
         if(!data.repository){
@@ -48,7 +48,7 @@ const handleAddContent = () => {
 
   const handleUpdate = async () => {
     try {
-      const result = await axios.put(`http://localhost:3000/repo/update/${id}`, {
+      const result = await axios.put(`13.53.131.133:3000/repo/update/${id}`, {
         description,
         content,
       });
