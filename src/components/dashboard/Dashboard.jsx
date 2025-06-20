@@ -16,7 +16,7 @@ const Dashboard = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `13.53.131.133:3000/repo/user/${userId}`
+          `https://github-backend-jeo7.onrender.com/repo/user/${userId}`
         );
          if (!response.ok) {
       console.error("Failed to fetch user repositories:", response.statusText);
