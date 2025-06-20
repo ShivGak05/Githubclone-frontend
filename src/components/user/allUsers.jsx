@@ -52,7 +52,7 @@ const handleFollowToggle = async (targetUserId) => {
       alert(data.message || "Error while following/unfollowing");
       return;
     }
-    const updatedRes = await fetch(`http://localhost:3000/user/${currId}`);
+    const updatedRes = await fetch(`13.53.131.133:3000/user/${currId}`);
     const updatedData = await updatedRes.json();
     setCurrentUser(updatedData.user); 
   } catch (err) {

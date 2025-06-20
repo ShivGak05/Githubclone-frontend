@@ -22,7 +22,7 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("13.53.131.133:3000/signup", {
+      const res = await axios.post("http://13.53.131.133:3000/signup", {
         email: email,
         password: password,
         username: username,
