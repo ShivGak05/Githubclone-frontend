@@ -13,7 +13,7 @@ const UpdateProfile = () => {
     const fetchUser = async () => {
       try {
         //console.log(id);
-        const result = await fetch(`13.53.131.133:3000/user/${id}`);
+        const result = await fetch(`https://github-backend-jeo7.onrender.com/user/${id}`);
         const data = await result.json();
         if (!result.ok) {
           alert("Error fetching user");
@@ -32,7 +32,7 @@ const UpdateProfile = () => {
 
   const handleUpdate = async () => {
     try {
-      const result = await fetch(`13.53.131.133:3000/user/update/${id}`, {
+      const result = await fetch(`https://github-backend-jeo7.onrender.com/user/update/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

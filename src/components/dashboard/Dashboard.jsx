@@ -37,7 +37,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
   try {
-    const response = await fetch("13.53.131.133:3000/repo/all");
+    const response = await fetch("https://github-backend-jeo7.onrender.com/repo/all");
     const data = await response.json();
 
     // If data is an array directly:

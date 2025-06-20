@@ -8,7 +8,7 @@ const RepositoryView = () => {
   useEffect(() => {
     const fetchRepository = async () => {
       try {
-        const response = await fetch(`13.53.131.133:3000/repo/${id}`);
+        const response = await fetch(`https://github-backend-jeo7.onrender.com/repo/${id}`);
         const data = await response.json();
         console.log(data.repository);
         setRepository(data.repository);

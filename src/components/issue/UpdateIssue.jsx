@@ -12,7 +12,7 @@ const UpdateIssue=()=>{
     useEffect(()=>{
         const fetchissue=async()=>{
             try{
-            const result=await fetch(`13.53.131.133:3000/issue/${id}`);
+            const result=await fetch(`https://github-backend-jeo7.onrender.com/issue/${id}`);
             const data=await result.json();
             if(!data.issue){
                 alert("error");
@@ -32,7 +32,7 @@ const UpdateIssue=()=>{
     
     const handleupdate=async()=>{
         try{
-           let result=await axios.put(`13.53.131.133:3000/issue/update/${id}`,{
+           let result=await axios.put(`https://github-backend-jeo7.onrender.com/issue/update/${id}`,{
             title,
             description,
             status,

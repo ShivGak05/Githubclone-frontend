@@ -10,7 +10,7 @@ const ViewIssue = () => {
   useEffect(() => {
     const findIssue = async () => {
       try {
-        const result = await fetch(`13.53.131.133:3000/issue/${id}`);
+        const result = await fetch(`https://github-backend-jeo7.onrender.com/issue/${id}`);
         const data = await result.json();
         if (!data.issue) {
           alert("No issue found");

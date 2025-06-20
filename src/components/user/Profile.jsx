@@ -23,9 +23,9 @@ const Profile = () => {
 
       try {
         const [userRes, repoRes, followingRes] = await Promise.all([
-          axios.get(`13.53.131.133:3000/user/${userId}`),
-          axios.get(`13.53.131.133:3000/repo/user/${userId}`),
-          axios.get(`13.53.131.133:3000/user/${userId}/following`)
+          axios.get(`https://github-backend-jeo7.onrender.com/user/${userId}`),
+          axios.get(`https://github-backend-jeo7.onrender.com/repo/user/${userId}`),
+          axios.get(`https://github-backend-jeo7.onrender.com/user/${userId}/following`)
         ]);
 
         setUserDetails(userRes.data);

@@ -11,7 +11,7 @@ const FollowUser = () => {
     check.current=true;
     const follow = async () => {
       try {
-        const result = await fetch(`13.53.131.133:3000/user/follow/${id}/${userId}`, {
+        const result = await fetch(`https://github-backend-jeo7.onrender.com/user/follow/${id}/${userId}`, {
           method: "PATCH",
         });
 
