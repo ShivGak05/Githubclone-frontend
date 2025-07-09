@@ -2,8 +2,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./repo.css"
 import server from "../../../Environment";
-import { useLocation } from "react-router-dom";
-const location=useLocation();
+//import { useLocation } from "react-router-dom";
+//const location=useLocation();
 const server_url=server;
 const RepositoryView = () => {
   const { id } = useParams();
