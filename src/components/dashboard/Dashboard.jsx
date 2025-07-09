@@ -105,8 +105,8 @@ const Dashboard = () => {
       </div>
     );
      const RepositoryCard = ({ repo, showVisibility = false }) => (
-        <div className="repo-card">
-          <div className="repo-header">
+        <div className="repo-card2">
+          <div className="repo-header2">
             <div className="repo-info">
               <GitBranch size={16} />
               <h4 className="repo-name">{repo.name}</h4>
@@ -129,15 +129,6 @@ const Dashboard = () => {
   return (
     <>
        <div className="dashboard-container">
-            {/* Navbar placeholder */}
-            {/* <nav className="navbar">
-              <div className="navbar-brand">GitBase</div>
-              <div className="navbar-nav">
-                <a href="#" className="nav-link">Dashboard</a>
-                <a href="#" className="nav-link">Repositories</a>
-                <a href="#" className="nav-link">Profile</a>
-              </div>
-            </nav> */}
             <Navbar/>
             
             <div className="dashboard-wrapper">
